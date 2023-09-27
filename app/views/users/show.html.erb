@@ -1,18 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
-<% if @user.present? %>
-  <%= render @user %>
-  <% if @user.microposts.any? %>
-    <p>マイクロポスト↓<%= render @user.microposts.first %></p>
-  <% else %>
-    <p>ユーザーのマイクロポストはありません。</p>
-  <% end %>
-  <div>
-    <%= link_to "Edit this user", edit_user_path(@user) %> |
-    <%= link_to "Back to users", users_path %>
-    <%= button_to "Destroy this user", @user, method: :delete %>
-  </div>
-<% else %>
-  <p>ユーザーが存在しません。</p>
-<% end %>
 
+<%= render @user %>
+
+<p>マイクロポスト↓<%= render @user.microposts.first %></p>
+
+<div>
+  
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+  
+</div>
